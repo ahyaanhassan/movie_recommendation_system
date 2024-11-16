@@ -219,7 +219,7 @@ else:
 
 # uploaded_file = st.file_uploader("Upload a movies CSV file", type=["csv"])
 
-if uploaded_file:
+if movies_file_available=="no":
     # Load the dataset
     try:
         movies_data = pd.read_csv(uploaded_file)
@@ -278,8 +278,11 @@ if uploaded_file:
                             col1, col2 = st.columns([1, 5])  # Adjust column ratios for layout
                             with col1:
                                 # Display the poster with a fixed size using st.image
+                                st.write(f"{i}). {movie_title}")
                                 st.image(poster_url, caption=movie_title, width=100)  # Control the width here
                             with col2:
+                                genres = movies_data.iloc[index]['genres']  # Get the genres from the dataset
+                                st.write(f"**Genres**: {genres}")
                                 # Create a clickable link to the trailer using markdown
                                 st.markdown(f"[Watch Trailer]( {trailer_link} )", unsafe_allow_html=True)
 
