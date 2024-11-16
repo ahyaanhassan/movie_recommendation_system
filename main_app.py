@@ -219,7 +219,7 @@ else:
 
 # uploaded_file = st.file_uploader("Upload a movies CSV file", type=["csv"])
 
-if movies_file_available=="no":
+if movies_file_available=="no" or movies_file_available=="yes":
     # Load the dataset
     try:
         st.write("No Problem I have uploaded a file for you which have 4000 movies list.\n From this uploaded file you will get movies_recommendation")
