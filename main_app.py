@@ -278,7 +278,7 @@ if uploaded_file:
                             col1, col2 = st.columns([1, 5])  # Adjust column ratios for layout
                             with col1:
                                 # Display the poster with a fixed size using st.image
-                                st.image(poster_url, caption=movie_title, width=150)  # Control the width here
+                                st.image(poster_url, caption=movie_title, width=100)  # Control the width here
                             with col2:
                                 # Create a clickable link to the trailer using markdown
                                 st.markdown(f"[Watch Trailer]( {trailer_link} )", unsafe_allow_html=True)
