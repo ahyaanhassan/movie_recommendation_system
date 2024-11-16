@@ -4,6 +4,7 @@
 # from sklearn.metrics.pairwise import cosine_similarity
 # import difflib
 
+
 # # App title
 # st.title("Movie Recommendation System")
 
@@ -178,6 +179,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import difflib
 import requests
+import time
 
 def get_movie_poster(movie_name, api_key="2d2138d81246f496bae564f66ed0d316"):
     base_url = "https://api.themoviedb.org/3/search/movie"
@@ -220,6 +222,9 @@ else:
 # uploaded_file = st.file_uploader("Upload a movies CSV file", type=["csv"])
 
 if movies_file_available=="no" or movies_file_available=="yes":
+    if movies_file_available=="yes":
+        time.sleep(10)
+            
     # Load the dataset
     try:
         st.write("No Problem I have uploaded a file for you which have 4000 movies list.\n From this uploaded file you will get movies_recommendation")
