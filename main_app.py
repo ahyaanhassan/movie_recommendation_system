@@ -273,12 +273,16 @@ if uploaded_file:
                         trailer_link = get_trailer_link(movie_title, api_key="2d2138d81246f496bae564f66ed0d316")
 
                         # Display movie poster as clickable link to trailer
+                        # Display movie poster as clickable link to trailer
                         if poster_url and trailer_link:
                             col1, col2 = st.columns([1, 5])  # Adjust column ratios for layout
                             with col1:
-                                st.markdown(f"[![{movie_title}]({poster_url})]({trailer_link})", unsafe_allow_html=True)
+                                # Display the poster with a fixed size using st.image
+                                st.image(poster_url, caption=movie_title, width=150)  # Control the width here
                             with col2:
-                                st.write(f"**{i}. {movie_title}**")
+                                # Create a clickable link to the trailer using markdown
+                                st.markdown(f"[Watch Trailer]( {trailer_link} )", unsafe_allow_html=True)
+
                         else:
                             st.write(f"**{i}. {movie_title}** (Poster or trailer not available)")
                 else:
