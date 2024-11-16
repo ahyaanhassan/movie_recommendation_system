@@ -215,7 +215,7 @@ movies_file_available=st.text_input("Enter yes if you have movie file or Enter n
 if movies_file_available=="yes":
     uploaded_file = st.file_uploader("Upload a movies CSV file if you have some movie file", type=["csv"])
 else:
-    uploaded_file="/workspaces/movie_recommendation_system/movies.csv"
+    uploaded_file="movies.csv"
 
 # uploaded_file = st.file_uploader("Upload a movies CSV file", type=["csv"])
 
