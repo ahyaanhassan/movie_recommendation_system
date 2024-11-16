@@ -222,6 +222,7 @@ else:
 if movies_file_available=="no":
     # Load the dataset
     try:
+        st.write("No Problem I have uploaded a file for you which have 4000 movies list.\n From this uploaded file you will get movies_recommendation")
         movies_data = pd.read_csv(uploaded_file)
         st.write("File uploaded successfully!")
         st.dataframe(movies_data.head())
